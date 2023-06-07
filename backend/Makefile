@@ -4,5 +4,5 @@ build-up:
 up:
 	docker compose up -d
 
-api-exec:
+exec-api:
 	docker compose exec api bash
