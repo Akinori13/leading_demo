@@ -13,9 +13,19 @@ services:
     command: [
       "bash",
       "-c",
-      "python manage.py runserver 0.0.0.0:8080"
+      "python manage.py runserver 0.0.0.0:9000"
     ]
     tty: true
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+
+  hasura:
+    container_name: leading_demo_hasura
+    image: hasura/graphql-engine:latest
+    env_file:
+      - .env
     ports:
       - "8080:8080"
     depends_on:
