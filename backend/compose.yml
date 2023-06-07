@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: leading_demo_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - .:/code
+    env_file:
+      - .env
+    # command: [
+    #   "bash",
+    #   "-c",
+    #   "python manage.py runserver"
+    # ]
+    tty: true
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    container_name: leading_demo_db
+    image: postgres:15
+    volumes:
+      - ./db/logs:/var/log/
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

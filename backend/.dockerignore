@@ -1,0 +1,10 @@
+# 環境設定
+.env
+.env.sample
+
+# その他
+README.md
+.git
+.vscode
+Makefile
+compose.yml
