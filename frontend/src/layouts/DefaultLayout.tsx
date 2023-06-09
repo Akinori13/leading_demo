@@ -1,4 +1,5 @@
 import React, {ReactNode} from "react";
+import {Box} from "@mui/material";
 import Header from "../components/Header";
 
 type DefaultLayoutProps = {
@@ -10,8 +11,10 @@ const DefaultLayout = ({children, pageTitle}: DefaultLayoutProps) => {
     return (
             <>
                 <Header />
-                <h2>{pageTitle}</h2>
-                {children}
+                <Box sx={{p: 1}}>
+                    <h1>{pageTitle}</h1>
+                    {children}
+                </Box>
             </>
         );
 }
