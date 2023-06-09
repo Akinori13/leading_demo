@@ -11,11 +11,10 @@ const Tweets = () => {
       };
 
     return (
-        <div>
-            <h1>Tweets</h1>
+        <DefaultLayout pageTitle="Tweets">
             <button onClick={() => methodDoesNotExist()}>Break the world</button>
-        </div>
+        </DefaultLayout>
     );
 }
 
-export default DefaultLayout(Tweets);
+export default Tweets;

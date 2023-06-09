@@ -1,11 +1,15 @@
 import DefaultLayout from "../layouts/DefaultLayout";
 
-const Home = () => {
+type HomeProps = { 
+    username: string
+}
+
+const Home = ({username}: HomeProps) => {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <DefaultLayout pageTitle="Home">
+            <h1>Welcome to the home page, {username}!</h1>
+        </DefaultLayout>
     );
 }
 
-export default DefaultLayout(Home);
+export default Home;

@@ -1,15 +1,19 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import Header from "../components/Header";
 
-const DefaultLayout = (Elemnt: any) => {
-    return (props: any) => {
-        return (
+type DefaultLayoutProps = {
+    children: ReactNode,
+    pageTitle: string
+}
+
+const DefaultLayout = ({children, pageTitle}: DefaultLayoutProps) => {
+    return (
             <>
                 <Header />
-                <Elemnt {...props} />
+                <h2>{pageTitle}</h2>
+                {children}
             </>
         );
-    }
 }
 
 export default DefaultLayout;

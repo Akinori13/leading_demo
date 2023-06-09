@@ -18,7 +18,7 @@ function App() {
             </li>
         </ul>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home username="SampleUser" />} />
           <Route path="/tweets" element={<Tweets />} />
         </Routes>
       </div>
