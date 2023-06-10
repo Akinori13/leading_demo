@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import worker from "./mocks/browser";
 
 import * as Sentry from "@sentry/react";
 
@@ -18,6 +19,11 @@ Sentry.init({
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1.0,
 });
+
+// MSW
+if (process.env.REACT_APP_ENV_TYPE === "development") {
+  worker.start();
+}
 
 
 const root = ReactDOM.createRoot(

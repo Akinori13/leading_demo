@@ -4,7 +4,7 @@ import * as Sentry from "@sentry/react";
 
 const Tweets = () => {
     const methodDoesNotExist = () => {
-        axios.get('/does-not-exist/').catch((error) => {
+        axios.get('/').catch((error) => {
           Sentry.captureException(error);
         }
         );
